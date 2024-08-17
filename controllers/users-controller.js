@@ -8,7 +8,7 @@ const createUser = async (req, res) => {
     const { username, password, role } = req.body;
 
     if (!username || !password || !role) {
-        return res.status(400).json({ message: 'username , password and role are required' });        
+        return res.status(400).json({ message: 'username , password and role are required' });
     }
 
     // Check if user already exists
@@ -42,8 +42,6 @@ const login = async (req, res) => {
 
     // Find the user by username
     const user = userModel.findUserByUsername(username);
-
-    console.log('aaaa', user);
 
     if (!user) {
         return res.status(401).json({ message: 'Invalid credentials' }); // Use 401 status code
