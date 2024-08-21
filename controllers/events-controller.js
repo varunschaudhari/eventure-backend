@@ -1,12 +1,8 @@
 const eventModel = require('../models/events-model');
 
-console.log('in controller');
-
 // Create Event
 const createEvent = async (req, res) => {
     const { date, time, description, participants } = req.body;
-
-    console.log('aaaaaaaaaaaaaa', req.body);
 
     const newEvent = {
         id: eventModel.getAllEvents().length + 1,

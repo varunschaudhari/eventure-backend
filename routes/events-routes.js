@@ -4,10 +4,8 @@ const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();
 
-console.log('aaaaaaaaaa in routes');
-
 // Only organizers can create, update, or delete events
-router.route('/createEvent').post(eventController.check); // Route to create an event
+router.route('/createEvent').post(eventController.createEvent); // Route to create an event
 
 router.route('/events/:id')
     .put(authMiddleware.verifyOrganizer, eventController.updateEvent) // Route to update an event by ID
